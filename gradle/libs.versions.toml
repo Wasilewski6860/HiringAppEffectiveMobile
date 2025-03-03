@@ -1,0 +1,92 @@
+[versions]
+agp = "8.5.2"
+kotlin = "2.0.0"
+coreKtx = "1.15.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.10.1"
+fragment = "1.8.6"
+constraintlayout = "2.2.1"
+androidxLifecycleVersion = "2.8.7"
+# Hilt
+hiltVersion = "2.55"
+jetbrainsKotlinJvm = "2.0.0"
+# ViewBindingDelegate
+viewBindingDelegateVersion = "1.5.9"
+gsonVersion = "2.10.1"
+# Network
+retrofit2Version = "2.9.0"
+retrofit2SerializationConverterVersion = "1.0.0"
+okhttp3Version = "4.12.0"
+chuckerVersion = "3.5.2"
+# Room
+roomVersion = "2.6.1"
+# Serialization
+kotlinxSerializationVersion = "1.5.0"
+# Coroutines
+kotlinxCoroutinesVersion = "1.7.3"
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activity" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragment" }
+
+# Hilt
+hiltAndroid = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
+hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hiltVersion" }
+hiltAndroidCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion" }
+
+# Androidx Lifecycle
+androidxLifecycleCommon = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidxLifecycleVersion" }
+androidxLifecycleLivedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidxLifecycleVersion" }
+androidxLifecycleRuntime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidxLifecycleVersion" }
+
+# Gson
+gson = { group = "com.google.code.gson", name = "gson", version.ref = "gsonVersion" }
+
+# ViewBindingDelegate
+viewBindingDelegate = { group = "com.github.kirich1409", name = "viewbindingpropertydelegate-noreflection", version.ref = "viewBindingDelegateVersion" }
+
+# Network
+okhttp3 = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp3Version" }
+okhttp3LoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp3Version" }
+retrofit2 = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit2Version" }
+retrofit2SerializationConverter = { group = "com.jakewharton.retrofit", name = "retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2SerializationConverterVersion" }
+
+# Room
+androidxRoom = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+androidxRoomCommon = { group = "androidx.room", name = "room-common", version.ref = "roomVersion" }
+androidxRoomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+androidxRoomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+
+# Serialization
+kotlinxSerialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
+protobufSerialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf", version.ref = "kotlinxSerializationVersion" }
+
+# Coroutines
+kotlinxCoroutines = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesVersion" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+# Hilt
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }
+
+[bundles]
+hilt = ["hiltAndroid", "hiltCompiler"]
+androidxLifecycle = ["androidxLifecycleCommon", "androidxLifecycleLivedata", "androidxLifecycleRuntime"]
+room = ["androidxRoom", "androidxRoomKtx"]
+kotlinxSerialization = ["kotlinxSerialization", "protobufSerialization"]
