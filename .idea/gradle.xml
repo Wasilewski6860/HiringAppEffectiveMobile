@@ -15,8 +15,17 @@
             <option value="$PROJECT_DIR$/base-feature" />
             <option value="$PROJECT_DIR$/database" />
             <option value="$PROJECT_DIR$/domain" />
+            <option value="$PROJECT_DIR$/favourites" />
+            <option value="$PROJECT_DIR$/favourites/feature" />
+            <option value="$PROJECT_DIR$/home" />
+            <option value="$PROJECT_DIR$/home/feature" />
+            <option value="$PROJECT_DIR$/home/interactor" />
             <option value="$PROJECT_DIR$/main" />
+            <option value="$PROJECT_DIR$/main/feature" />
+            <option value="$PROJECT_DIR$/main/interactor" />
             <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/search" />
+            <option value="$PROJECT_DIR$/search/feature" />
             <option value="$PROJECT_DIR$/transport" />
             <option value="$PROJECT_DIR$/uikit" />
           </set>

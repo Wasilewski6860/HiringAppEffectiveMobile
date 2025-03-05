@@ -12,4 +12,6 @@ abstract class BaseViewModel<ScreenState : State, ScreenEvent : UiEvent> : ViewM
 
     protected abstract val _uiEvent: MutableSharedFlow<ScreenEvent>
     abstract val uiEvent: SharedFlow<ScreenEvent>
+
+    open fun onBackPressed() = Unit
 }

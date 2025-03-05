@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultTitle1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultTitle2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultTitle3">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_medium</item>
+    </style>
+
+    <style name="DefaultTitle4">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_medium</item>
+    </style>
+
+    <style name="DefaultText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultButtonText1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultButtonText2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultTabText">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultNumberText">
+        <item name="android:textSize">7sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+<!--    <style name="DefaultLargeBody">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_regular</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="DefaultBody">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_regular</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="DefaultHeadline">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="DefaultBadge">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="DefaultLabel">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--        <item name="android:textAllCaps">true</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodySBold">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodyXS">-->
+<!--        <item name="android:textSize">10sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_regular</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodyXSBold">-->
+<!--        <item name="android:textSize">10sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodyS">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_regular</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodyBold">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBodyLink">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_regular</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomButtonS">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">1sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomButtonM">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomButtonL">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomPriceS">-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomPriceXS">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomOldPriceS">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">1sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomPrice">-->
+<!--        <item name="android:textSize">18sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomOldPrice">-->
+<!--        <item name="android:textSize">14sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomPriceM">-->
+<!--        <item name="android:textSize">36sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomOldPriceM">-->
+<!--        <item name="android:textSize">24sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">4sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomLabel">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomBadge">-->
+<!--        <item name="android:textSize">12sp</item>-->
+<!--        <item name="android:fontFamily">@font/formular_medium</item>-->
+<!--        <item name="android:lineSpacingExtra">2sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomLabelCardM">-->
+<!--        <item name="android:textSize">22sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="CustomTextCardM">-->
+<!--        <item name="android:textSize">13sp</item>-->
+<!--        <item name="android:fontFamily">@font/din_pro_bold</item>-->
+<!--        <item name="android:lineSpacingExtra">3sp</item>-->
+<!--    </style>-->
+
+<!--    <style name="PrimaryColorSelectedWithHandles" >-->
+<!--        <item name="colorControlActivated">@color/primary_60</item>-->
+<!--        <item name="android:textColorHighlight">@color/primary_20</item>-->
+<!--    </style>-->
+
+</resources>

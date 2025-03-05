@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bottomNav_search">Поиск</string>
+    <string name="bottomNav_favourites">Избранное</string>
+    <string name="bottomNav_feedback">Отклики</string>
+    <string name="bottomNav_messages">Сообщения</string>
+    <string name="bottomNav_profile">Профиль</string>
+</resources>

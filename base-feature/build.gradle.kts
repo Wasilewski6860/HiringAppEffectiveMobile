@@ -9,6 +9,13 @@ android {
     namespace = "ru.hiringapp.base_feature"
     compileSdk = 34
 
+    defaultConfig {
+        minSdk = 26
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
@@ -24,14 +31,14 @@ android {
 dependencies {
 
     implementation(project(":base"))
+    api(project(":uikit"))
 
-    api(libs.viewBindingDelegate)
     implementation(libs.bundles.androidxLifecycle)
-    implementation(libs.viewBindingDelegate)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
+    api(libs.androidx.fragment)
 
-    implementation(libs.bundles.hilt)
+    api(libs.bundles.hilt)
     kapt(libs.hiltAndroid)
     kapt(libs.hiltCompiler)
     kapt(libs.hiltAndroidCompiler)

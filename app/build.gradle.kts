@@ -3,14 +3,15 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlinParcelize)
 }
 
 android {
-    namespace = "ru.hiringapp.effectivemobile"
+    namespace = "ru.hiringapp"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ru.hiringapp.effectivemobile"
+        applicationId = "ru.hiringapp"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
@@ -51,9 +52,18 @@ dependencies {
 
     implementation(project(":base"))
     implementation(project(":base-feature"))
+    implementation(project(":domain"))
     implementation(project(":transport"))
     implementation(project(":network"))
     implementation(project(":uikit"))
+
+    implementation(project(":search:feature"))
+    implementation(project(":favourites:feature"))
+    implementation(project(":feedback:feature"))
+    implementation(project(":messages:feature"))
+    implementation(project(":profile:feature"))
+    implementation(project(":main:feature"))
+    implementation(project(":main:interactor"))
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.ktx)

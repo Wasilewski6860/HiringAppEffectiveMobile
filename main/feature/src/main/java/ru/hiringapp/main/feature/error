@@ -1,0 +1,93 @@
+import android.os.Bundle
+import dagger.hilt.android.AndroidEntryPoint
+import ru.hiringapp.base_feature.mvvm.BaseActivity
+import ru.hiringapp.base_feature.new_navigation.executor.AppCommandExecutor
+import ru.hiringapp.base_feature.new_navigation.navigator.activity.ActivityNavigatorFactory
+import ru.hiringapp.base_feature.new_navigation.provider.callbacks.ActivityNavigationProviderCallbacks
+import ru.hiringapp.base_feature.new_navigation.provider.container.FragmentNavigationContainer
+import ru.hiringapp.base_feature.routing_adapter.FragmentRouterNewImpl
+import ru.hiringapp.main.feature.databinding.ActivityMainBinding
+
+@AndroidEntryPoint
+class MainActivity : BaseActivity<MainUiState, MainEvent, MainViewModel, ActivityMainBinding>(),
+    FragmentNavigationContainer {
+
+    override lateinit var binding: ActivityMainBinding
+    override val viewModel by lazy {
+        val navigationCommandExecutor = AppCommandExecutor(
+            activityNavigationProvider = ActivityNavigationProviderCallbacks(
+                activityNavigatorFactory = ActivityNavigatorFactory()
+            ),
+        )
+        val router = FragmentRouterNewImpl(navigationCommandExecutor = navigationCommandExecutor)
+        MainViewModel(
+            router
+        )
+    }
+
+    override fun handleUiState(uiState: MainUiState) {
+
+    }
+
+    override fun handleUiEvent(event: MainEvent) {
+
+    }
+
+    override val containerId: Int = R.id.globalFragmentContainerView
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        setContentView(R.id.activity_main2)
+    }
+}
+
+
+package ru.hiringapp.main.feature
+
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
+import ru.hiringapp.base_feature.mvvm.BaseViewModel
+import ru.hiringapp.base_feature.mvvm.State
+import ru.hiringapp.base_feature.mvvm.UiEvent
+import ru.hiringapp.base_feature.navigation.destinations.home.HomeFragmentRoute
+import ru.hiringapp.base_feature.new_navigation.routing.router.FragmentRouter
+import javax.inject.Inject
+
+class MainUiState : State
+class MainEvent : UiEvent
+
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val adapterForFragmentRouter: FragmentRouter
+) : BaseViewModel<MainUiState, MainEvent>() {
+
+    override val _uiState = MutableStateFlow(MainUiState())
+    override val uiState: StateFlow<MainUiState> = _uiState
+
+    override val _uiEvent = MutableSharedFlow<MainEvent>()
+    override val uiEvent = _uiEvent.asSharedFlow()
+
+    init {
+        adapterForFragmentRouter.open(HomeFragmentRoute())
+    }
+
+}
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/globalFragmentContainerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</FrameLayout>
