@@ -4,7 +4,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
-interface BaseView<ScreenState : State, ScreenEvent : UiEvent> : SingleStateView<ScreenState>,
+interface BaseView<ScreenState : State, ScreenEvent : UiEvent> : SingleStateView<ScreenState, ScreenEvent>,
     CoroutineScope {
 
     val viewModel: BaseViewModel<ScreenState, ScreenEvent>
