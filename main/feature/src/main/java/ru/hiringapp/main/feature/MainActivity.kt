@@ -1,12 +1,16 @@
 package ru.hiringapp.main.feature
 
+import android.os.Build
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsCompat.Type.navigationBars
+import androidx.core.view.WindowInsetsCompat.Type.statusBars
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import androidx.core.view.updatePadding
@@ -19,6 +23,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import ru.hiringapp.base_feature.extensions.afterMeasured
 import ru.hiringapp.base_feature.second_navigation.NavigationManager
+import ru.hiringapp.base_feature.utils.setPaddingToInset
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItem
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItemsClickListenerImpl
 import ru.hiringapp.main.feature.data.MainUiState
@@ -55,7 +60,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -102,34 +106,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun applySystemBottomInsets() {
-        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars =
-            true
-        with(binding) {
-            ViewCompat.setOnApplyWindowInsetsListener(globalFragmentContainerView) { view, insets ->
-                val systemInsetsType = WindowInsetsCompat.Type.systemBars()
-                val systemGesturesInsetsType = WindowInsetsCompat.Type.systemGestures()
-                val imeInsetsType = WindowInsetsCompat.Type.ime()
-                val imeHeight = insets.getInsets(imeInsetsType).bottom
-                val types = systemInsetsType + systemGesturesInsetsType + imeInsetsType
-                val typeInsets = insets.getInsets(types)
-                rvTabs.afterMeasured {
-                    rvTabs.updatePadding(
-                        bottom = typeInsets.bottom
-                    )
-                }
-                if (imeHeight == 0) {
-                    rvTabs.isVisible = true
-                    view.updatePadding(
-                        bottom = 0
-                    )
-                } else {
-                    rvTabs.isVisible = false
-                    view.updatePadding(
-                        bottom = typeInsets.bottom
-                    )
-                }
-                insets
-            }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            WindowCompat.setDecorFitsSystemWindows(window, false)
+            binding.globalFragmentContainerView setPaddingToInset statusBars()
+            binding.rvTabs setPaddingToInset navigationBars()
+//            binding.fragmentContainerView setPaddingToInset statusBars()
         }
     }
 }

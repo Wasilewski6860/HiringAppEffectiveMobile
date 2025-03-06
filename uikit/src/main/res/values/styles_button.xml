@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActionButtonSmall">
+        <item name="android:background">@drawable/bg_small_action_btn</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="ActionButtonMedium">
+        <item name="android:background">@drawable/bg_medium_action_btn</item>
+        <item name="android:textAppearance">@style/DefaultTitle4</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ActionButtonBig" parent="ActionButtonMedium">
+        <item name="android:textAppearance">@style/DefaultTitle3</item>
+    </style>
+
+</resources>
