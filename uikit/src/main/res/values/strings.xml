@@ -5,4 +5,7 @@
     <string name="bottomNav_feedback">Отклики</string>
     <string name="bottomNav_messages">Сообщения</string>
     <string name="bottomNav_profile">Профиль</string>
+
+    <string name="searchAppBar_hint_standart">Должность, ключевые слова</string>
+    <string name="searchAppBar_hint_expanded">Должность по подходящим вакансиям</string>
 </resources>

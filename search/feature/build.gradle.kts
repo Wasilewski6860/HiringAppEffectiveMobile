@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(":base-feature"))
+    implementation(project(":search:interactor"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -47,7 +48,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation(libs.bundles.adapterDelegate)
     api(libs.bundles.hilt)
     kapt(libs.hiltAndroid)
     kapt(libs.hiltCompiler)

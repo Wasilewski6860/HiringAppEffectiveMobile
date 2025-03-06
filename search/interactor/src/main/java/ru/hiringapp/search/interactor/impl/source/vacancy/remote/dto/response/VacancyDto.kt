@@ -10,31 +10,31 @@ import ru.hiringapp.transport.base.Transformable
 class VacancyDto(
     @SerialName("id")
     val id: String,
-    @SerialName("id")
+    @SerialName("title")
     val title: String, //Needed
-    @SerialName("id")
+    @SerialName("company")
     val company: String, //Needed
-    @SerialName("id")
+    @SerialName("address")
     val address: AddressDto, //Needed just address.town
-    @SerialName("id")
+    @SerialName("experience")
     val experience: ExperienceDto, //Needed just experience.previewText
-    @SerialName("id")
+    @SerialName("publishedDate")
     val publishedDate: String, //Needed
-    @SerialName("id")
+    @SerialName("isFavorite")
     val isFavorite: Boolean, //Needed
-    @SerialName("id")
+    @SerialName("salary")
     val salary: Salary,
-    @SerialName("id")
+    @SerialName("schedules")
     val schedules: List<String>,
-    @SerialName("id")
+    @SerialName("description")
     val description: String,
-    @SerialName("id")
+    @SerialName("responsibilities")
     val responsibilities: String,
-    @SerialName("id")
+    @SerialName("questions")
     val questions: List<String>,
-    @SerialName("id")
+    @SerialName("lookingNumber")
     val lookingNumber: Int? = null, //Needed
-    @SerialName("id")
+    @SerialName("appliedNumber")
     val appliedNumber: Int? = null
 ) : Transformable<Vacancy> {
     override fun transform(): Vacancy {

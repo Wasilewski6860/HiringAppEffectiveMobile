@@ -12,15 +12,18 @@ class OfferDto(
     val id: String? = null,
     @SerialName("title")
     val title: String,
-    @SerialName("link")
-    val link: String,
+    @SerialName("c")
+    val description: String,
     @SerialName("button")
-    val button: ButtonDto? = null
+    val button: ButtonDto? = null,
+    @SerialName("link")
+    val link: String
 ) : Transformable<Offer> {
     override fun transform(): Offer {
         return Offer(
             id = id,
             title = title,
+            description = description,
             link = link,
             button = button?.transform()
         )

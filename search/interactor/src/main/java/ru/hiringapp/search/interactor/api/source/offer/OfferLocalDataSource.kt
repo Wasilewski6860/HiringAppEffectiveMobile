@@ -11,4 +11,6 @@ interface OfferLocalDataSource {
     suspend fun saveOffers(offers: List<Offer>)
 
     fun observeOffers(): Flow<List<Offer>>
+
+    suspend fun getOffers(): List<Offer>
 }

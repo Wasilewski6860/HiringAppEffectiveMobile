@@ -26,4 +26,7 @@ internal class OfferLocalDataSourceImpl @Inject constructor(
 
     override fun observeOffers(): Flow<List<Offer>> =
         offerDao.getOffersFlow().map { it.transform() }
+
+    override suspend fun getOffers(): List<Offer> =
+        offerDao.getOffers().map { it.transform() }
 }

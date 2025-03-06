@@ -58,6 +58,7 @@ dependencies {
     implementation(project(":uikit"))
 
     implementation(project(":search:feature"))
+    implementation(project(":search:interactor"))
     implementation(project(":favourites:feature"))
     implementation(project(":feedback:feature"))
     implementation(project(":messages:feature"))

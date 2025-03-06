@@ -22,10 +22,29 @@ internal class SearchRepositoryImpl @Inject constructor(
     private val vacanciesRemoteDataSource: VacancyRemoteDataSource,
 ) : SearchRepository {
 
-    init {
-        CoroutineScope(Dispatchers.IO).launch {
-            fetchAndSaveOffers()
-            fetchAndSaveVacancies()
+//    init {
+//        CoroutineScope(Dispatchers.IO).launch {
+//            fetchAndSaveOffers()
+////            fetchAndSaveVacancies()
+//        }
+//    }
+
+    override suspend fun getOffers(): List<Offer> {
+        when (val remoteResult = offerRemoteDataSource.getOffers()) {
+            is OperationResult.Success -> {
+                val offersDto = remoteResult.data.offers
+                val offers = offersDto.transform()
+                offerLocalDataSource.clearOffers()
+                offerLocalDataSource.saveOffers(offers)
+                return offers
+            }
+            is OperationResult.EmptyResult -> {
+                val offersDto = offerLocalDataSource.getOffers()
+                return offersDto
+            }
+            else -> {
+                return emptyList()
+            }
         }
     }
 

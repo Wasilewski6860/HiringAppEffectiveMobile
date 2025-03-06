@@ -6,6 +6,8 @@ import ru.hiringapp.domain.vacancy.Vacancy
 
 internal interface SearchRepository {
 
+    suspend fun getOffers(): List<Offer>
+
     fun observeOffers(): Flow<List<Offer>>
 
     fun observeVacancies(): Flow<List<Vacancy>>

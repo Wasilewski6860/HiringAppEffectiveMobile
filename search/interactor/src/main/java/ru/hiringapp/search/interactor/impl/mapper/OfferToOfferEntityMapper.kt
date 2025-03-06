@@ -11,8 +11,9 @@ class OfferToOfferEntityMapper @Inject constructor() : Mapper<Offer, OfferEntity
             return OfferEntity(
                 id = id,
                 title = title,
+                description = description,
                 link = link,
-                button = button
+                button = button?.text
             )
         }
     }

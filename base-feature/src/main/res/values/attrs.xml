@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleIconView">
+        <attr name="circleColor" format="color"/>
+        <attr name="iconDrawable" format="reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="SearchAppBar">
+        <attr name="actionIconDrawable" format="reference"/>
+        <attr name="hintText" format="reference"/>
+    </declare-styleable>
+</resources>
