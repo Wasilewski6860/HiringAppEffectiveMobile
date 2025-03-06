@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.hiltAndroid)
+    alias(libs.plugins.kotlin.kapt)
     id("kotlin-parcelize")
 }
 
@@ -24,7 +26,13 @@ dependencies {
     api(libs.androidx.appcompat)
     api(libs.material)
     api(libs.bundles.kotlinxSerialization)
+    implementation(libs.javax.inject)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    api(libs.bundles.hilt)
+    kapt(libs.hiltAndroid)
+    kapt(libs.hiltCompiler)
+    kapt(libs.hiltAndroidCompiler)
 }

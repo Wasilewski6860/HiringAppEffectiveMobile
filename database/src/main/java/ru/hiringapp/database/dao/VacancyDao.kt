@@ -16,17 +16,11 @@ interface VacancyDao {
     @Insert(entity = VacancyEntity::class, onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertVacancies(vacancies: List<VacancyEntity>)
 
-    @Insert(entity = VacancyEntity::class, onConflict = OnConflictStrategy.REPLACE)
-    fun insert(vacancy: VacancyEntity)
-
-    @Query("SELECT * FROM vacancy")
-    fun getVacancies() : List<VacancyEntity>
+    @Query("UPDATE vacancy SET is_favorite = :isFavorite WHERE id = :id")
+    suspend fun updateFavoriteStatus(id: String, isFavorite: Boolean)
 
     @Query("SELECT * FROM vacancy")
     fun getVacanciesFlow() : Flow<List<VacancyEntity>>
-
-    @Query("SELECT * FROM vacancy WHERE is_favorite")
-    fun getFavouriteVacancies() : List<VacancyEntity>
 
     @Query("SELECT * FROM vacancy WHERE is_favorite")
     fun getFavouriteVacanciesFlow() : Flow<List<VacancyEntity>>
