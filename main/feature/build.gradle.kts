@@ -40,6 +40,7 @@ android {
 
 dependencies {
     implementation(project(":base-feature"))
+    implementation(project(":vacancy:common-interactor"))
     implementation(project(":network"))
 
     implementation(libs.androidx.core.ktx)

@@ -58,13 +58,17 @@ dependencies {
     implementation(project(":uikit"))
 
     implementation(project(":search:feature"))
-    implementation(project(":search:interactor"))
     implementation(project(":favourites:feature"))
     implementation(project(":feedback:feature"))
     implementation(project(":messages:feature"))
     implementation(project(":profile:feature"))
     implementation(project(":main:feature"))
     implementation(project(":main:interactor"))
+
+    implementation(project(":offers:common-interactor"))
+    implementation(project(":offers:common-feature"))
+    implementation(project(":vacancy:common-feature"))
+    implementation(project(":vacancy:common-interactor"))
 
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.ktx)

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="DefaultTitle1">
+        <item name="android:textSize">22sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultTitle2">
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultTitle3">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_medium</item>
+    </style>
+
+    <style name="DefaultTitle4">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_medium</item>
+    </style>
+
+    <style name="DefaultText">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultButtonText1">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/sf_semibold</item>
+    </style>
+
+    <style name="DefaultButtonText2">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultTabText">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+    <style name="DefaultNumberText">
+        <item name="android:textSize">7sp</item>
+        <item name="android:fontFamily">@font/sf_regular</item>
+    </style>
+
+
+</resources>

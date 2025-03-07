@@ -36,6 +36,8 @@ android {
 
 dependencies {
     implementation(project(":base-feature"))
+    implementation(project(":vacancy:common-interactor"))
+    implementation(project(":vacancy:common-feature"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

@@ -37,7 +37,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     api(libs.androidx.fragment)
-    implementation(libs.bundles.adapterDelegate)
+    api(libs.bundles.adapterDelegate)
     api(libs.bundles.hilt)
     kapt(libs.hiltAndroid)
     kapt(libs.hiltCompiler)

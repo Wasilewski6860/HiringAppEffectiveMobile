@@ -1,8 +1,13 @@
 package ru.hiringapp.search.data
 
 import ru.hiringapp.base_feature.mvvm.State
-import ru.hiringapp.search.blocks.BlockDataUi
+import ru.hiringapp.offers.OfferItem
+import ru.hiringapp.vacancy.VacancyItem
 
 internal data class SearchUiState(
-    val items: List<BlockDataUi> = listOf()
-): State
+    val offers: List<OfferItem> = listOf(),
+    val vacancies: List<VacancyItem> = listOf(),
+    val isExpanded: Boolean = false,
+    val allVacanciesText: String = "",
+    val additionalVacanciesText: String = ""
+) : State

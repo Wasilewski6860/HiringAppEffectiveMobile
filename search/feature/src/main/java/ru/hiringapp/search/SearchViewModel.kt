@@ -1,6 +1,5 @@
 package ru.hiringapp.search
 
-import android.util.Log
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -14,17 +13,27 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.hiringapp.base_feature.mvvm.BaseViewModel
 import ru.hiringapp.base_feature.second_navigation.NavigationManager
-import ru.hiringapp.search.blocks.BlockDataUi
-import ru.hiringapp.search.blocks.BlocksMapper
+import ru.hiringapp.offers.OfferItem
+import ru.hiringapp.search.mapper.VacanciesMapper
 import ru.hiringapp.search.data.SearchUiEvent
 import ru.hiringapp.search.data.SearchUiState
-import ru.hiringapp.search.interactor.api.usecase.GetOffersUseCase
+import ru.hiringapp.offers.api.usecase.GetOffersUseCase
+import ru.hiringapp.offers.api.usecase.ObserveOffersUseCase
+import ru.hiringapp.vacancy.api.usecase.ChangeVacancyIsFavouriteUseCase
+import ru.hiringapp.vacancy.api.usecase.ObserveVacanciesUseCase
+import ru.hiringapp.search.mapper.OffersMapper
+import ru.hiringapp.vacancy.VacancyItem
+import ru.hiringapp.vacancy.api.usecase.UpdateVacanciesUseCase
 import javax.inject.Inject
 
 @HiltViewModel
 internal class SearchViewModel @Inject constructor(
-    private val getOffersUseCase: GetOffersUseCase,
-    private val blocksMapper: BlocksMapper,
+    private val updateVacanciesUseCase: UpdateVacanciesUseCase,
+    private val observeOffersUseCase: ObserveOffersUseCase,
+    private val observeVacanciesUseCase: ObserveVacanciesUseCase,
+    private val changeVacancyIsFavouriteUseCase: ChangeVacancyIsFavouriteUseCase,
+    private val offersMapper: OffersMapper,
+    private val vacanciesMapper: VacanciesMapper,
     private val navigationManager: NavigationManager,
 ) : BaseViewModel<SearchUiState, SearchUiEvent>() {
 
@@ -35,25 +44,63 @@ internal class SearchViewModel @Inject constructor(
     override val uiEvent = _uiEvent.asSharedFlow()
 
     init {
-        viewModelScope.launch {
-            try {
-                val offers = withContext(Dispatchers.IO) {
-                    getOffersUseCase()
-                }
-                val mappedItems = blocksMapper(offers) + blocksMapper(offers)
-                _uiState.update {
-                    it.copy(items = mappedItems)
-                }
-            } catch (e: Exception) {
-                // Обработка ошибки
-//                Log.e("ViewModel", "Ошибка при загрузке offers", e)
-                Log.e("Ошибка при загрузке offers", e.message?:" Теста ошибки нет")
+        subscribeOnOffers()
+        subscribeOnVacancies()
+    }
 
+    private fun subscribeOnOffers() {
+        viewModelScope.launch {
+            observeOffersUseCase().collect { data ->
+                _uiState.update {
+                    it.copy(offers = offersMapper(data))
+                }
             }
         }
     }
 
-    fun onOfferClick(offer: BlockDataUi.OfferItem) {
+    private fun subscribeOnVacancies() {
+        viewModelScope.launch {
+            observeVacanciesUseCase().collect { data ->
+                _uiState.update {
+                    val vacanciesData = vacanciesMapper(it.isExpanded, data)
+                    it.copy(
+                        vacancies = vacanciesData.vacancyItems,
+                        allVacanciesText = vacanciesData.allVacanciesText,
+                        additionalVacanciesText = vacanciesData.additionalVacanciesText
+                    )
+                }
+            }
+        }
+    }
 
+    fun onOfferClick(offer: OfferItem) {
+
+    }
+
+    fun onVacancyApplyBtnClick(vacancy: VacancyItem) {
+
+    }
+
+    fun onVacancyFavouriteBtnClick(vacancy: VacancyItem) {
+        viewModelScope.launch {
+            withContext(Dispatchers.IO) {
+                changeVacancyIsFavouriteUseCase(vacancy.id, !vacancy.isFavorite)
+            }
+        }
+    }
+
+    fun onLoadMoreBtnClick() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val vacancies = updateVacanciesUseCase()
+            _uiState.update {
+                val vacanciesData = vacanciesMapper(true, vacancies)
+                it.copy(
+                    isExpanded = true,
+                    vacancies = vacanciesData.vacancyItems,
+                    allVacanciesText = vacanciesData.allVacanciesText,
+                    additionalVacanciesText = vacanciesData.additionalVacanciesText
+                )
+            }
+        }
     }
 }

@@ -28,14 +28,18 @@
             <option value="$PROJECT_DIR$/messages" />
             <option value="$PROJECT_DIR$/messages/feature" />
             <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/offers" />
+            <option value="$PROJECT_DIR$/offers/common-feature" />
+            <option value="$PROJECT_DIR$/offers/common-interactor" />
             <option value="$PROJECT_DIR$/profile" />
             <option value="$PROJECT_DIR$/profile/feature" />
             <option value="$PROJECT_DIR$/search" />
             <option value="$PROJECT_DIR$/search/feature" />
-            <option value="$PROJECT_DIR$/search/interactor" />
-            <option value="$PROJECT_DIR$/search/shared-interactor" />
             <option value="$PROJECT_DIR$/transport" />
             <option value="$PROJECT_DIR$/uikit" />
+            <option value="$PROJECT_DIR$/vacancy" />
+            <option value="$PROJECT_DIR$/vacancy/common-feature" />
+            <option value="$PROJECT_DIR$/vacancy/common-interactor" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
