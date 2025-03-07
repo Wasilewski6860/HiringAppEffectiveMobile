@@ -1,6 +1,7 @@
 package ru.hiringapp.database
 
 import androidx.room.TypeConverter
+import com.google.common.reflect.TypeToken
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -40,4 +41,12 @@ class SalaryConverter {
 
     @TypeConverter
     fun toSalary(value: String): Salary = Json.decodeFromString(value)
+}
+
+class StringListConverter {
+    @TypeConverter
+    fun fromList(value: List<String>) = Json.encodeToString(value)
+
+    @TypeConverter
+    fun toList(value: String): List<String> = Json.decodeFromString(value)
 }

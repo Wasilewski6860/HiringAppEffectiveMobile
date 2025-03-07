@@ -24,4 +24,7 @@ interface VacancyDao {
 
     @Query("SELECT * FROM vacancy WHERE is_favorite")
     fun getFavouriteVacanciesFlow() : Flow<List<VacancyEntity>>
+
+    @Query("SELECT COUNT(*) FROM vacancy WHERE is_favorite")
+    fun observeFavouriteVacanciesCount(): Flow<Int>
 }

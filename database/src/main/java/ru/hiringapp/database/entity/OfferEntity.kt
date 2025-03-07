@@ -19,9 +19,11 @@ data class OfferEntity(
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "link")
-    val link: String,
+    val link: String?,
+    @ColumnInfo(name = "description")
+    val description: String?,
     @ColumnInfo(name = "button")
-    val button: Button?
+    val button: String?
 ): Transformable<Offer> {
 
     companion object {
@@ -33,7 +35,7 @@ data class OfferEntity(
             id = id,
             title = title,
             link = link,
-            button = button
+            button = button?.let { Button(it) }
         )
     }
 }

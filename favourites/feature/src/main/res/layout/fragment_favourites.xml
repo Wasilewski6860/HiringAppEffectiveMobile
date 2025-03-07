@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavouritesFragment">
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/tvVacanciesForYou"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="favourites" />
+        android:layout_height="wrap_content"
+        android:paddingTop="32dp"
+        android:paddingBottom="16dp"
+        android:text="Вакансии для вас"
+        android:textAppearance="@style/DefaultTitle2"
+        android:textColor="?android:attr/textColorPrimary" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvVacanciesCount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:paddingBottom="16dp"
+        android:textAppearance="@style/DefaultText"
+        android:textColor="?android:attr/textColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="145 вакансий" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvVacancies"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" />
+
+</LinearLayout>

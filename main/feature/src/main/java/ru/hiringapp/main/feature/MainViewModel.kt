@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import ru.hiringapp.base.resources.ColorResources
 import ru.hiringapp.base.resources.DrawableResource
 import ru.hiringapp.base_feature.mvvm.BaseViewModel
@@ -19,11 +20,12 @@ import ru.hiringapp.base_feature.second_navigation.NavigationManager
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItem
 import ru.hiringapp.main.feature.data.MainUiEvent
 import ru.hiringapp.main.feature.data.MainUiState
+import ru.hiringapp.vacancy.api.usecase.ObserveFavouriteVacanciesCountUseCase
 import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-//    private val getCurrentFavouritesCountUseCase: GetCurrentFavouritesCountUseCase,
+    private val observeFavouriteVacanciesCountUseCase: ObserveFavouriteVacanciesCountUseCase,
     colorResources: ColorResources,
     drawableResource: DrawableResource,
     private val navigationManager: NavigationManager
@@ -45,14 +47,16 @@ class MainViewModel @Inject constructor(
     }
 
     init {
-        viewModelScope.launch(Dispatchers.Main) {
-            tabsController.getSelectedTabScreen()
-//            getCurrentFavouritesCountUseCase().onSuccess {
-//                tabsController.setFavouritesBadgeCount(it)
-//            }
-        }
+        observeFavouriteVacanciesCount()
     }
 
+    private fun observeFavouriteVacanciesCount() {
+        viewModelScope.launch {
+            observeFavouriteVacanciesCountUseCase().collect { data ->
+                tabsController.setFavouritesBadgeCount(data.takeIf { it != 0 })
+            }
+        }
+    }
     fun onMainContainerLoaded(containerId: Int) {
         navigationManager.setNavigationContainer(containerId)
     }

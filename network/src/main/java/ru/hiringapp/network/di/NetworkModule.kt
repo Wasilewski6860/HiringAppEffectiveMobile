@@ -17,6 +17,8 @@ import ru.hiringapp.network.connection.ConnectionProvider
 import ru.hiringapp.network.connection.impl.ConnectionProviderImpl
 import javax.inject.Singleton
 
+const val BASE_URL = "https://hiringapp.ru/"
+
 @Module
 @InstallIn(SingletonComponent::class)
 internal class NetworkModule {
@@ -50,7 +52,7 @@ internal class NetworkModule {
         val contentType = "application/json".toMediaType()
 
         return Retrofit.Builder()
-            .baseUrl("TODO")
+            .baseUrl(BASE_URL)
             .addConverterFactory(jsonParser.asConverterFactory(contentType))
             .client(okHttpClient)
             .build()

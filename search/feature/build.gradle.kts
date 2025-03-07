@@ -41,13 +41,18 @@ android {
 dependencies {
     implementation(project(":base-feature"))
 
+    implementation(project(":offers:common-interactor"))
+    implementation(project(":offers:common-feature"))
+    implementation(project(":vacancy:common-feature"))
+    implementation(project(":vacancy:common-interactor"))
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
+    implementation(libs.bundles.adapterDelegate)
     api(libs.bundles.hilt)
     kapt(libs.hiltAndroid)
     kapt(libs.hiltCompiler)

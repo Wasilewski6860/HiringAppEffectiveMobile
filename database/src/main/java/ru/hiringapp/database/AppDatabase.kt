@@ -20,7 +20,8 @@ import ru.hiringapp.database.entity.VacancyEntity
     ButtonConverter::class,
     AddressConverter::class,
     ExperienceConverter::class,
-    SalaryConverter::class
+    SalaryConverter::class,
+    StringListConverter::class,
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun offerDao(): OfferDao

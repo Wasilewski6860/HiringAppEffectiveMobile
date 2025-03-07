@@ -65,6 +65,11 @@ dependencies {
     implementation(project(":main:feature"))
     implementation(project(":main:interactor"))
 
+    implementation(project(":offers:common-interactor"))
+    implementation(project(":offers:common-feature"))
+    implementation(project(":vacancy:common-feature"))
+    implementation(project(":vacancy:common-interactor"))
+
     implementation(libs.androidx.activity)
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.fragment)

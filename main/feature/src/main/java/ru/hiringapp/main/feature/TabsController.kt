@@ -50,7 +50,7 @@ internal class TabsController(
         }
     }
 
-    fun setFavouritesBadgeCount(count: Int) {
+    fun setFavouritesBadgeCount(count: Int?) {
         setBadgeCount(UiConstants.BottomNavigation.FAVOURITES_PAGE_ID, count)
     }
 
@@ -63,7 +63,7 @@ internal class TabsController(
         updateTabs(lastTabId)
     }
 
-    fun getSelectedTabScreen(): BaseRoute<Fragment> = getRouteByItem(selectedTab)
+    private fun getSelectedTabScreen(): BaseRoute<Fragment> = getRouteByItem(selectedTab)
 
     private fun getRouteByItem(bottomNavigationItem: BottomNavigationItem): BaseRoute<Fragment> =
         when (bottomNavigationItem.id) {
@@ -75,8 +75,7 @@ internal class TabsController(
             else -> error("Неподдерживаемый идентификатор таба")
         }
 
-    @Suppress("SameParameterValue")
-    private fun setBadgeCount(id: Int, count: Int) {
+    private fun setBadgeCount(id: Int, count: Int?) {
         val updatedTabs = tabs.map {
             if (it.id == id) {
                 it.deepCopy {
