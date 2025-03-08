@@ -1,4 +1,4 @@
-package ru.hiringapp.base_feature.second_navigation.destinations
+package ru.hiringapp.base_feature.navigation.destinations
 
 object RoutesInfo {
     const val FAVOURITES_SCREENPATH = "ru.hiringapp.favourites.FavouritesFragment"

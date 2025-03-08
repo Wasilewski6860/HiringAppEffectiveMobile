@@ -49,9 +49,15 @@ class SearchAppBar @JvmOverloads constructor(
         binding.etSearch.hint = hintText
     }
 
-    fun setActionDrawable(resId: Int) {
+    fun setAction(resId: Int, onActionClick: () -> Unit) {
         iconDrawable =
-            AppCompatResources.getDrawable(context, UiKitR.drawable.ic_search_not_selected)
-        binding.imgActionIcon.setImageDrawable(iconDrawable)
+            AppCompatResources.getDrawable(context, resId)
+        binding.imgActionIcon.apply {
+            setImageDrawable(iconDrawable)
+            setOnClickListener {
+                onActionClick()
+            }
+        }
+
     }
 }

@@ -3,17 +3,11 @@ package ru.hiringapp.main.feature
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsCompat.Type.navigationBars
 import androidx.core.view.WindowInsetsCompat.Type.statusBars
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.core.view.isVisible
-import androidx.core.view.updatePadding
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.flowWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -21,8 +15,7 @@ import com.google.android.flexbox.FlexWrap
 import com.google.android.flexbox.FlexboxLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import ru.hiringapp.base_feature.extensions.afterMeasured
-import ru.hiringapp.base_feature.second_navigation.NavigationManager
+import ru.hiringapp.base_feature.navigation.NavigationManager
 import ru.hiringapp.base_feature.utils.setPaddingToInset
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItem
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItemsClickListenerImpl

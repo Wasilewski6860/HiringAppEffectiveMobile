@@ -1,10 +1,11 @@
-package ru.hiringapp.base_feature.second_navigation
+package ru.hiringapp.base_feature.navigation
 
 import androidx.fragment.app.Fragment
 import kotlin.reflect.KClass
 
-abstract class BaseRoute<S : Fragment>(private val classPath: String) {
+sealed class NavigationRoute
 
+abstract class FragmentRoute<S : Fragment>(private val classPath: String) : NavigationRoute() {
     fun getScreenClass(): KClass<out S>? {
         return kotlin.runCatching {
             Class.forName(classPath).kotlin
@@ -17,3 +18,5 @@ abstract class BaseRoute<S : Fragment>(private val classPath: String) {
         }.getOrNull() as? KClass<out S>
     }
 }
+
+class ExternalUrlRoute(val url: String) : NavigationRoute()

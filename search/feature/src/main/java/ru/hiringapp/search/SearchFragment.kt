@@ -62,7 +62,7 @@ internal class SearchFragment : BaseFragment<SearchUiState, SearchUiEvent>() {
                     tvVacanciesCount.text = state.allVacanciesText
                     btnLoadMore.isVisible = false
                     searchBar.setHintText(R.string.searchAppBar_hint_expanded)
-                    searchBar.setActionDrawable(R.drawable.ic_action_back)
+                    searchBar.setAction(R.drawable.ic_action_back, viewModel::onActionBackClick)
                 }
 
                 false -> {
@@ -72,7 +72,7 @@ internal class SearchFragment : BaseFragment<SearchUiState, SearchUiEvent>() {
                     btnLoadMore.isVisible = true
                     btnLoadMore.text = state.additionalVacanciesText
                     searchBar.setHintText(R.string.searchAppBar_hint_standart)
-                    searchBar.setActionDrawable(R.drawable.ic_search_not_selected)
+                    searchBar.setAction(R.drawable.ic_search_not_selected, {})
                 }
             }
         }

@@ -4,16 +4,15 @@ import androidx.fragment.app.Fragment
 import ru.hiringapp.base.UiConstants
 import ru.hiringapp.base.resources.ColorResources
 import ru.hiringapp.base.resources.DrawableResource
-import ru.hiringapp.base_feature.second_navigation.BaseRoute
-import ru.hiringapp.base_feature.second_navigation.NavigationManager
-import ru.hiringapp.base_feature.second_navigation.destinations.FavouritesFragmentRoute
-import ru.hiringapp.base_feature.second_navigation.destinations.FeedbackFragmentRoute
-import ru.hiringapp.base_feature.second_navigation.destinations.MessagesFragmentRoute
-import ru.hiringapp.base_feature.second_navigation.destinations.ProfileFragmentRoute
-import ru.hiringapp.base_feature.second_navigation.destinations.SearchFragmentRoute
+import ru.hiringapp.base_feature.navigation.FragmentRoute
+import ru.hiringapp.base_feature.navigation.NavigationManager
+import ru.hiringapp.base_feature.navigation.destinations.FavouritesFragmentRoute
+import ru.hiringapp.base_feature.navigation.destinations.FeedbackFragmentRoute
+import ru.hiringapp.base_feature.navigation.destinations.MessagesFragmentRoute
+import ru.hiringapp.base_feature.navigation.destinations.ProfileFragmentRoute
+import ru.hiringapp.base_feature.navigation.destinations.SearchFragmentRoute
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItem
 
-//И тут табы
 internal class TabsController(
     private val colorResources: ColorResources,
     private val state: State,
@@ -59,13 +58,14 @@ internal class TabsController(
             selectedTabsQueue.removeAt(selectedTabsQueue.lastIndex)
         }
 
-        val lastTabId = selectedTabsQueue.lastOrNull() ?: UiConstants.BottomNavigation.SEARCH_PAGE_ID
+        val lastTabId =
+            selectedTabsQueue.lastOrNull() ?: UiConstants.BottomNavigation.SEARCH_PAGE_ID
         updateTabs(lastTabId)
     }
 
-    private fun getSelectedTabScreen(): BaseRoute<Fragment> = getRouteByItem(selectedTab)
+    private fun getSelectedTabScreen(): FragmentRoute<Fragment> = getRouteByItem(selectedTab)
 
-    private fun getRouteByItem(bottomNavigationItem: BottomNavigationItem): BaseRoute<Fragment> =
+    private fun getRouteByItem(bottomNavigationItem: BottomNavigationItem): FragmentRoute<Fragment> =
         when (bottomNavigationItem.id) {
             UiConstants.BottomNavigation.SEARCH_PAGE_ID -> SearchFragmentRoute()
             UiConstants.BottomNavigation.FAVOURITES_PAGE_ID -> FavouritesFragmentRoute()

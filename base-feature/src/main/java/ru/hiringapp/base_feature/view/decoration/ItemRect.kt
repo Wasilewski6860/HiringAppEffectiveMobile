@@ -1,4 +1,4 @@
-package ru.hiringapp.base_feature.itemdecoration
+package ru.hiringapp.base_feature.view.decoration
 
 data class ItemRect(
     var top: Int = 0,

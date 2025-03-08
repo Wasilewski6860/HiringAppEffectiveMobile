@@ -19,7 +19,7 @@ data class OfferEntity(
     @ColumnInfo(name = "title")
     val title: String,
     @ColumnInfo(name = "link")
-    val link: String?,
+    val link: String,
     @ColumnInfo(name = "description")
     val description: String?,
     @ColumnInfo(name = "button")

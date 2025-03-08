@@ -1,7 +1,5 @@
 package ru.hiringapp.offers
 
-import ru.hiringapp.base_feature.itemdecoration.DecoratedRecyclerViewItem
-
 enum class OfferIconState(val id: String) {
     NEAR_VACANCIES("near_vacancies"),
     LEVEL_UP_RESUME("level_up_resume"),
@@ -19,14 +17,6 @@ enum class OfferIconState(val id: String) {
 data class OfferItem(
     val iconState: OfferIconState,
     val title: String,
-    val buttonText: String?
-) : DecoratedRecyclerViewItem() {
-
-    override fun areItemsTheSame(newItem: DecoratedRecyclerViewItem): Boolean {
-        return super.areItemsTheSame(newItem) ||
-                newItem is OfferItem && newItem.title == title
-    }
-
-    override fun areContentsTheSame(newItem: DecoratedRecyclerViewItem): Boolean =
-        super.areContentsTheSame(newItem) && newItem is OfferItem
-}
+    val buttonText: String?,
+    val link: String
+)

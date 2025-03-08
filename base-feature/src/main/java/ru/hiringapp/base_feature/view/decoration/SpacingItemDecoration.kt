@@ -4,7 +4,6 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import ru.hiringapp.base_feature.itemdecoration.ItemRect
 
 class SpacingItemDecoration(
     private val spanCount: Int,

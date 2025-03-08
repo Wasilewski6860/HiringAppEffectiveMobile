@@ -1,7 +1,6 @@
 package ru.hiringapp.base_feature.view.decoration
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import ru.hiringapp.base_feature.itemdecoration.ItemRect
 
 class SpacingItemDecorationBuilder {
     private var spanCount = 1

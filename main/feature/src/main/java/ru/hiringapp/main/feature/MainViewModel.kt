@@ -2,7 +2,6 @@ package ru.hiringapp.main.feature
 
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,13 +9,10 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import ru.hiringapp.base.resources.ColorResources
 import ru.hiringapp.base.resources.DrawableResource
 import ru.hiringapp.base_feature.mvvm.BaseViewModel
-import ru.hiringapp.base_feature.mvvm.State
-import ru.hiringapp.base_feature.mvvm.UiEvent
-import ru.hiringapp.base_feature.second_navigation.NavigationManager
+import ru.hiringapp.base_feature.navigation.NavigationManager
 import ru.hiringapp.main.feature.bottom_navigation.BottomNavigationItem
 import ru.hiringapp.main.feature.data.MainUiEvent
 import ru.hiringapp.main.feature.data.MainUiState

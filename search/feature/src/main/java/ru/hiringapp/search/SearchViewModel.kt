@@ -12,12 +12,12 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import ru.hiringapp.base_feature.mvvm.BaseViewModel
-import ru.hiringapp.base_feature.second_navigation.NavigationManager
+import ru.hiringapp.base_feature.navigation.ExternalUrlRoute
+import ru.hiringapp.base_feature.navigation.NavigationManager
 import ru.hiringapp.offers.OfferItem
 import ru.hiringapp.search.mapper.VacanciesMapper
 import ru.hiringapp.search.data.SearchUiEvent
 import ru.hiringapp.search.data.SearchUiState
-import ru.hiringapp.offers.api.usecase.GetOffersUseCase
 import ru.hiringapp.offers.api.usecase.ObserveOffersUseCase
 import ru.hiringapp.vacancy.api.usecase.ChangeVacancyIsFavouriteUseCase
 import ru.hiringapp.vacancy.api.usecase.ObserveVacanciesUseCase
@@ -74,11 +74,17 @@ internal class SearchViewModel @Inject constructor(
     }
 
     fun onOfferClick(offer: OfferItem) {
-
+        navigationManager.navigateTo(ExternalUrlRoute(offer.link))
     }
 
     fun onVacancyApplyBtnClick(vacancy: VacancyItem) {
 
+    }
+
+    fun onActionBackClick() {
+        _uiState.update {
+            it.copy(isExpanded = !it.isExpanded)
+        }
     }
 
     fun onVacancyFavouriteBtnClick(vacancy: VacancyItem) {

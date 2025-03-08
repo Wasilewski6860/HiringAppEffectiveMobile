@@ -1,8 +1,6 @@
 package ru.hiringapp.main.feature.bottom_navigation
 
 import androidx.annotation.StringRes
-import ru.hiringapp.base.text.UiText
-import ru.hiringapp.base_feature.itemdecoration.DecoratedRecyclerViewItem
 
 data class BottomNavigationItem(
     val id: Int,
@@ -11,7 +9,7 @@ data class BottomNavigationItem(
     var badgeCount: Int? = null,
     var activeResources: SelectionStateResources,
     var inactiveResources: SelectionStateResources,
-) : DecoratedRecyclerViewItem() {
+) {
     val currentResources
         get() = if (isSelected) {
             activeResources
@@ -19,15 +17,7 @@ data class BottomNavigationItem(
             inactiveResources
         }
 
-    val isBadgeVisible get() = badgeCount!=null
-
-    override fun areItemsTheSame(newItem: DecoratedRecyclerViewItem): Boolean {
-        return newItem is BottomNavigationItem && newItem.id == id
-    }
-
-    override fun areContentsTheSame(newItem: DecoratedRecyclerViewItem): Boolean {
-        return newItem is BottomNavigationItem && newItem == this
-    }
+    val isBadgeVisible get() = badgeCount != null
 
     fun deepCopy(copyFun: BottomNavigationItem.() -> BottomNavigationItem): BottomNavigationItem {
         return copyFun(this).apply {

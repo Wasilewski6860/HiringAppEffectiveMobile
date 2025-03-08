@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView.ItemDecoration
 
 class EqualHeightItemDecoration : ItemDecoration() {
 
-    // Максимальная высота элемента в списке
     private var maxHeight = 0
     override fun onDrawOver(c: Canvas, parent: RecyclerView, state: RecyclerView.State) {
         super.onDrawOver(c, parent, state)

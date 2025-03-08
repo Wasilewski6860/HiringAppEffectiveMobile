@@ -22,7 +22,7 @@ class DatabaseModule {
             appContext,
             AppDatabase::class.java,
             "hiring_database.db"
-        ).build()
+        ).fallbackToDestructiveMigration().build()
     }
 
     @Provides

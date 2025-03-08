@@ -3,7 +3,6 @@ package ru.hiringapp.base_feature.extensions
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import ru.hiringapp.base_feature.itemdecoration.ItemRect
 
 const val DEFAULT_DEBOUNCE_INTERVAL = 400L
 
@@ -20,8 +19,4 @@ inline fun View.setOnDebounceClickListener(
         handler.postDelayed(runnable, DEFAULT_DEBOUNCE_INTERVAL)
         listener(it)
     }
-}
-
-fun View.setPadding(itemRect: ItemRect) {
-    this.setPadding(itemRect.left, itemRect.top, itemRect.right, itemRect.bottom)
 }

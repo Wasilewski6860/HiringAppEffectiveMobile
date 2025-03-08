@@ -15,7 +15,8 @@ internal class OffersMapper @Inject constructor() :
             OfferItem(
                 iconState = OfferIconState.fromString(it.id),
                 title = it.title,
-                buttonText = it.button?.text
+                buttonText = it.button?.text,
+                link = it.link
             )
         }
     }
