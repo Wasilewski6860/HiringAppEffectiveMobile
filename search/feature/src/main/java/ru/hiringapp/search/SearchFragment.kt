@@ -22,9 +22,6 @@ import ru.hiringapp.vacancy.createVacanciesAdapter
 @AndroidEntryPoint
 internal class SearchFragment : BaseFragment<SearchUiState, SearchUiEvent>() {
 
-    override val canPressBack: Boolean = false
-    override val isRootFragment: Boolean = false
-
     lateinit var binding: FragmentSearchBinding
     override val viewModel: SearchViewModel by viewModels()
 

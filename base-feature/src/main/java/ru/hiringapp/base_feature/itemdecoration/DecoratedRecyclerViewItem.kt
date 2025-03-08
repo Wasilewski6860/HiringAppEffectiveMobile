@@ -75,7 +75,6 @@ abstract class DecoratedRecyclerViewItem {
         }
         val isLastRow = when (orientation) {
             Orientation.VERTICAL -> {
-                // Вычисляем свободное пространство последней строки
                 val shift = if (items.size % maxSpan != 0) {
                     maxSpan - items.size % maxSpan
                 } else {

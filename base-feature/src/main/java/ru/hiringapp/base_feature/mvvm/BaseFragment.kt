@@ -15,9 +15,6 @@ import kotlin.coroutines.CoroutineContext
 abstract class BaseFragment<ScreenState : State, ScreenEvent : UiEvent> : Fragment(),
     BaseView<ScreenState, ScreenEvent> {
 
-    abstract val canPressBack: Boolean
-    abstract val isRootFragment: Boolean
-
     abstract fun onBackPressed()
 
     private val backPressedCallback: OnBackPressedCallback by lazy {
@@ -56,8 +53,6 @@ abstract class BaseFragment<ScreenState : State, ScreenEvent : UiEvent> : Fragme
     }
 
     protected open fun setupBackPressedCallback() {
-        if (canPressBack && !isRootFragment) {
-            requireActivity().onBackPressedDispatcher.addCallback(this, backPressedCallback)
-        }
+        requireActivity().onBackPressedDispatcher.addCallback(this, backPressedCallback)
     }
 }

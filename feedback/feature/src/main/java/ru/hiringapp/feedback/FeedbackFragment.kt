@@ -14,9 +14,6 @@ import ru.hiringapp.feedback.databinding.FragmentFeedbackBinding
 @AndroidEntryPoint
 class FeedbackFragment : BaseFragment<FeedbackUiState, FeedbackUiEvent>() {
 
-    override val canPressBack: Boolean = false
-    override val isRootFragment: Boolean = false
-
     lateinit var binding: FragmentFeedbackBinding
     override val viewModel: FeedbackViewModel by viewModels()
 

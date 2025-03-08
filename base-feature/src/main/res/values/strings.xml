@@ -64,6 +64,7 @@
 
     <plurals name="viewers_count_text">
         <item quantity="one">Сейчас просматривает %d человек</item>
+        <item quantity="two">Сейчас просматривает %d человека</item>
         <item quantity="few">Сейчас просматривают %d человека</item>
         <item quantity="many">Сейчас просматривают %d человек</item>
         <item quantity="other">Сейчас просматривают %d человек</item>
@@ -71,6 +72,7 @@
 
     <plurals name="more_vacancies">
         <item quantity="one">Еще %d вакансия</item>
+        <item quantity="two">Еще %d вакансии</item>
         <item quantity="few">Еще %d вакансии</item>
         <item quantity="many">Еще %d вакансий</item>
         <item quantity="other">Еще %d вакансии</item>
@@ -78,10 +80,12 @@
 
     <string name="no_vacancies">Нет вакансий</string>
 
-    <plurals name="vacancies_count">
+    <plurals name="plurals_vacancies_count">
         <item quantity="one">%d вакансия</item>
+        <item quantity="two">%d вакансии</item>
         <item quantity="few">%d вакансии</item>
         <item quantity="many">%d вакансий</item>
         <item quantity="other">%d вакансии</item>
     </plurals>
+
 </resources>

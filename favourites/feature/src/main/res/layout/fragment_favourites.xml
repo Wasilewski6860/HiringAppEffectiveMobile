@@ -8,12 +8,12 @@
     android:paddingHorizontal="16dp">
 
     <TextView
-        android:id="@+id/tvVacanciesForYou"
+        android:id="@+id/tvFavourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="32dp"
         android:paddingBottom="16dp"
-        android:text="Вакансии для вас"
+        android:text="Избранное"
         android:textAppearance="@style/DefaultTitle2"
         android:textColor="?android:attr/textColorPrimary" />
 
@@ -24,7 +24,7 @@
         android:paddingTop="24dp"
         android:paddingBottom="16dp"
         android:textAppearance="@style/DefaultText"
-        android:textColor="?android:attr/textColorPrimary"
+        android:textColor="@color/grey_3"
         app:layout_constraintStart_toStartOf="parent"
         tools:text="145 вакансий" />
 

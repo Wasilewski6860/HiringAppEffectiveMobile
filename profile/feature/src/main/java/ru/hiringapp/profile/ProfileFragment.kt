@@ -14,9 +14,6 @@ import ru.hiringapp.profile.databinding.FragmentProfileBinding
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<ProfileUiState, ProfileUiEvent>() {
 
-    override val canPressBack: Boolean = false
-    override val isRootFragment: Boolean = false
-
     lateinit var binding: FragmentProfileBinding
     override val viewModel: ProfileViewModel by viewModels()
 
@@ -25,16 +22,7 @@ class ProfileFragment : BaseFragment<ProfileUiState, ProfileUiEvent>() {
     }
 
     override fun initViews() {
-//        with(binding) {
-//            rvTabs.apply {
-//                adapter = bottomNavigationAdapter
-//                layoutManager = FlexboxLayoutManager(context).apply {
-//                    flexWrap = FlexWrap.NOWRAP
-//                }
-//                itemAnimator = null
-//            }
-//        }
-//        applySystemBottomInsets()
+
     }
 
     override fun handleUiEvent(event: ProfileUiEvent) {
@@ -42,14 +30,14 @@ class ProfileFragment : BaseFragment<ProfileUiState, ProfileUiEvent>() {
     }
 
     override fun render(state: ProfileUiState) {
-//        bottomNavigationAdapter.items = state.tabs
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
         return binding.root
     }

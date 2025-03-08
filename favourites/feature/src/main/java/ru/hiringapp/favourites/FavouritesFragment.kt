@@ -21,9 +21,6 @@ import ru.hiringapp.vacancy.createVacanciesAdapter
 @AndroidEntryPoint
 internal class FavouritesFragment : BaseFragment<FavouritesUiState, FavouritesUiEvent>() {
 
-    override val canPressBack: Boolean = false
-    override val isRootFragment: Boolean = false
-
     lateinit var binding: FragmentFavouritesBinding
     override val viewModel: FavouritesViewModel by viewModels()
 
