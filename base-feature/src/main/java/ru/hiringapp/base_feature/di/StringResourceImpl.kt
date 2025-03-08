@@ -63,7 +63,7 @@ class StringResourceImpl @Inject constructor(
         return if (count == 0) {
             context.getString(R.string.no_vacancies)
         } else {
-            context.resources.getQuantityString(R.plurals.vacancies_count, count, count)
+            context.resources.getQuantityString(R.plurals.plurals_vacancies_count, count, count)
         }
     }
 

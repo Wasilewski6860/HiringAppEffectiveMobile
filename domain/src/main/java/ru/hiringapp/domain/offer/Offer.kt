@@ -6,6 +6,4 @@ data class Offer(
     val description: String? = null,
     val link: String? = null,
     val button: Button? = null
-) {
-    val hasButton: Boolean = button != null
-}
+)

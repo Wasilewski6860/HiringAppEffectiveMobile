@@ -14,9 +14,6 @@ import ru.hiringapp.messages.databinding.FragmentMessagesBinding
 @AndroidEntryPoint
 class MessagesFragment : BaseFragment<MessagesUiState, MessagesUiEvent>() {
 
-    override val canPressBack: Boolean = false
-    override val isRootFragment: Boolean = false
-
     lateinit var binding: FragmentMessagesBinding
     override val viewModel: MessagesViewModel by viewModels()
 
@@ -25,16 +22,7 @@ class MessagesFragment : BaseFragment<MessagesUiState, MessagesUiEvent>() {
     }
 
     override fun initViews() {
-//        with(binding) {
-//            rvTabs.apply {
-//                adapter = bottomNavigationAdapter
-//                layoutManager = FlexboxLayoutManager(context).apply {
-//                    flexWrap = FlexWrap.NOWRAP
-//                }
-//                itemAnimator = null
-//            }
-//        }
-//        applySystemBottomInsets()
+
     }
 
     override fun handleUiEvent(event: MessagesUiEvent) {
@@ -42,14 +30,14 @@ class MessagesFragment : BaseFragment<MessagesUiState, MessagesUiEvent>() {
     }
 
     override fun render(state: MessagesUiState) {
-//        bottomNavigationAdapter.items = state.tabs
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentMessagesBinding.inflate(inflater, container, false)
         return binding.root
     }
