@@ -9,7 +9,6 @@ import ru.hiringapp.base.resources.DrawableResource
 import ru.hiringapp.base.resources.StringResources
 import javax.inject.Singleton
 
-//ТУТ РЕСУРСЫ
 @Module
 @InstallIn(SingletonComponent::class)
 interface ResourceBindsModule {
