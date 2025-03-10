@@ -23,7 +23,7 @@ internal fun createOfferDelegate(
                 isVisible = true
                 when (item.iconState) {
                     OfferIconState.NEAR_VACANCIES -> {
-                        setIconDrawable(getDrawable(UiKitR.drawable.ic_feedback))
+//                      TODO Вставить иконку когда появится в дизайне
                         setCircleColor(getColor(UiKitR.color.blue))
                     }
                     OfferIconState.LEVEL_UP_RESUME -> {
